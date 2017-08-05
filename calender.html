@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Calender App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/clndr.css">
+<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<div class="w3-container w3-deep-orange w3-center">
+  <h1>Profit Loss Sheet</h1>
+</div>
+
+<div id="full-clndr">
+	
+</div>
+
+<div class="w3-container w3-black w3-center">
+  <p>Copyright 2017. All Rights Reserved.</p>
+</div>
+
+
+<!-- Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="js/clndr.js"></script>
+<script id="fuck" type="text/template">
+	<div class="clndr-controls">
+    <div class="clndr-previous-button">&lsaquo;</div>
+    <div class="month"><%= month %></div>
+    <div class="clndr-next-button">&rsaquo;</div>
+</div>
+<div class="clndr-grid">
+    <div class="days-of-the-week">
+    <% _.each(daysOfTheWeek, function (day) { %>
+        <div class="header-day"><%= day %></div>
+    <% }); %>
+        <div class="days">
+        <% _.each(days, function (day) { %>
+            <div class="<%= day.classes %>"><%= day.day %></div>
+        <% }); %>
+        </div>
+    </div>
+</div>
+</script>
+
+<script>
+	
+	$(document).ready(function(){
+		console.log('dsfsdfdsfdsjf');
+
+			$('#full-clndr').clndr({
+				 template: $('#fuck').html(),
+				 clickEvents: {
+				    click: function(target) {
+				    	alert(target.date);
+				      console.log(target);
+				    },
+				}
+			});
+
+	});
+
+</script>
+
+</body>
+</html> 

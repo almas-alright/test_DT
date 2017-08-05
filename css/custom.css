@@ -1,0 +1,15 @@
+a{text-decoration: none;}
+a:hover{color: #ff5722;}
+.report-list li a:after {
+	content: "\f105";
+	font-family: fontawesome;
+	margin-left: 15px;
+}
+
+.report-list li a:hover:after {
+	color: #ff5722;
+}
+
+.report-list li a i{
+	margin-right: 15px;
+}
